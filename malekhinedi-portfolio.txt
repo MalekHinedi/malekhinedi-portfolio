@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Malek Hinedi | Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
+
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(270deg, #8b7bff, #b891ff, #7dcfff, #6de4b8);
+      background-size: 800% 800%;
+      animation: gradientBG 20s ease infinite;
+      color: #1f2937;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    a {
+      color: #4f46e5;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #9333ea;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 3rem auto 4rem;
+      padding: 2rem;
+      background: rgba(255 255 255 / 0.35);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255 255 255 / 0.4);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+      color: white;
+      user-select: none;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    header p.subtitle {
+      font-weight: 500;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    header p.description {
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* Abstract floating shapes */
+    .shapes {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 200px;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+      opacity: 0.15;
+    }
+
+    .shape-circle {
+      fill: white;
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+      animation: floatUpDown 6s ease-in-out infinite alternate;
+    }
+
+    .shape-circle2 {
+      animation-delay: 3s;
+    }
+
+    @keyframes floatUpDown {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-15px);
+      }
+    }
+
+    section {
+      margin-bottom: 2rem;
+      color: #111827;
+    }
+
+    section h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      border-bottom: 3px solid #9333ea;
+      padding-bottom: 0.25rem;
+      margin-bottom: 1rem;
+    }
+
+    section p,
+    section ul {
+      font-weight: 400;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Experience cards */
+    .card {
+      background: rgba(255 255 255 / 0.5);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      background: rgba(255 255 255 / 0.65);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .card h3 {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: #4f46e5;
+    }
+
+    .card span {
+      font-size: 0.9rem;
+      color: #6b7280;
+      font-style: italic;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      max-width: 900px;
+      margin: 0 auto 2rem;
+      padding: 1rem 2rem;
+      text-align: center;
+      color: white;
+      font-weight: 400;
+      font-size: 0.9rem;
+      user-select: none;
+    }
+
+    footer a {
+      color: #a78bfa;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      color: #7c3aed;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>Malek Hinedi</h1>
+      <p class="subtitle">Business & Data Analyst</p>
+      <p class="description">
+        Leveraging data to drive strategic business decisions and operational excellence.
+      </p>
+
+      <svg class="shapes" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <circle class="shape-circle" cx="150" cy="100" r="80" />
+        <circle class="shape-circle shape-circle2" cx="450" cy="120" r="100" />
+      </svg>
+    </header>
+
+    <section>
+      <h2>About Me</h2>
+      <p>
+        Analytical and detail-oriented Business & Data Analyst with a strong foundation in data analysis, business
+        intelligence, and process optimization. Proficient in collecting, interpreting, and visualizing data to support
+        strategic decision-making and improve operational efficiency. Adept at collaborating with cross-functional teams,
+        identifying key business drivers, and enhancing data-driven decision-making. Passionate about leveraging data
+        analytics to optimize business performance and support organizational growth. Strong problem-solving abilities and
+        the ability to translate complex data into meaningful business recommendations.
+      </p>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="card">
+        <h3><strong>Business Data Analyst – Abdullah AlOthaim Investment Company</strong></h3>
+        <span>Mar 2024 to Present</span>
+        <ul>
+          <li>Analyze business processes, workflows, and system performance to identify areas for improvement.</li>
+          <li>Gather, document, and validate business requirements from stakeholders.</li>
+          <li>Conduct market research and competitive analysis to support strategic decision-making.</li>
+          <li>Assist in developing business cases, feasibility studies, and cost-benefit analyses.</li>
+          <li>Extract, clean, and interpret large datasets to identify trends and insights.</li>
+          <li>Develop and maintain reports, dashboards, and KPIs using Power BI, Tableau, and Excel.</li>
+          <li>Provide actionable insights to enhance business performance and customer experience.</li>
+          <li>Support project teams by defining scope, objectives, and deliverables.</li>
+          <li>Recommend automation and process improvements.</li>
+          <li>Collaborate with IT and development teams on system implementations.</li>
+          <li>Perform user experience testing for usability improvements.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><strong>Information Technology Technical Support – Esolutions</strong></h3>
+        <span>Jan 2024 – Mar 2024</span>
+        <ul>
+          <li>Diagnosed and resolved hardware/software issues to reduce downtime.</li>
+          <li>Performed network troubleshooting and ensured stable network functionality.</li>
+          <li>Installed and configured hardware and software systems.</li>
+          <li>Provided customer support and guided issue resolution.</li>
+          <li>Assisted in application rollouts and user training.</li>
+          <li>Created documentation to improve support processes.</li>
+          <li>Handled multiple concurrent support cases and prioritized urgent issues.</li>
+          <li>Ensured compliance with electrical safety standards.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <ul>
+        <li>SQL</li>
+        <li>Power BI</li>
+        <li>Excel (Advanced)</li>
+        <li>Python</li>
+        <li>Data Management</li>
+        <li>Business Process Improvement</li>
+        <li>Business Analysis</li>
+        <li>User Experience (UX)</li>
+        <li>Dashboards</li>
+        <li>Web Analytics</li>
+        <li>Data Visualization</li>
+        <li>System Testing</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <p><strong>Management Information Systems</strong> – Eastern Mediterranean University (Sep 2022 – Feb 2025)</p>
+    </section>
+
+    <section>
+      <h2>Honors & Awards</h2>
+      <ul>
+        <li>High Honor Certificates – Associated with Eastern Mediterranean University</li>
+        <li>Highest ranking student in the program of MIS – Associated with Eastern Mediterranean University</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <ul>
+        <li>McKinsey Forward Program – McKinsey & Company – Dec 2024</li>
+        <li>Data Fundamentals – IBM – Oct 2024</li>
+        <li>Analyzing and Visualizing Data with Microsoft Power BI – Professional Path Training Center – Jun 2024</li>
+        <li>SharePoint Online – Alison – Jun 2024</li>
+        <li>CompTIA Security+ ce Certification – CompTIA – Apr 2023 – Apr 2026</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <ul>
+        <li>English – Full professional proficiency</li>
+        <li>Arabic – Native or bilingual proficiency</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:Malek.hinedi96@gmail.com">Malek.hinedi96@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/malekhinedi" target="_blank" rel="noopener noreferrer">Malek
+          Hinedi</a></p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Malek Hinedi. All rights reserved.
+  </footer>
+</body>
+
+</html>
